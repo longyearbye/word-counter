@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word counter</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=EB+Garamond:ital,wght@0,500;1,400;1,500&family=Josefin+Sans&family=Lora:ital@1&family=Montserrat:wght@400;700&family=Roboto+Mono:wght@300&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 25px;
+            text-align: center; 
+            min-height: 100vh;
+            font-family: 'Aboreto', cursive;
+            background-color: rgba(150, 172, 233, 1);
+            background-image: linear-gradient(148deg, rgba(150, 172, 233, 1) 0%, rgba(228, 230, 243, 1) 50%, rgba(150, 172, 233, 1) 100%);
+        }
+        #words{
+            font-size: 20px;
+        }
+        #number{
+            font-size: 25px;
+            
+        }
+        #title {
+            font-size: 30px;
+            padding: 30px;
+            font-weight: bold;
+        }
+    </style>
+        <body>
+            <div id="title"> WORD COUNTER</div>
+
+        <div id="container">
+            <textarea id="words" 
+                rows="10" cols="45"></textarea>
+                    <div id="number">
+                      Number of words: <span class="span">0</span>
+                 </div>
+        </div>
+        </body>
+    <script>
+        let counter = document.querySelector('.span')
+        let words = document.querySelector('#words'); 
+
+        words.addEventListener('input', () => {
+        let text = words.value.trim(); 
+        counter.textContent = text.split(/\s+/).filter((item) => item).length; 
+        })
+        
+
+    </script>
+
+
+
+</html>
